@@ -1,0 +1,126 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ACTIVE	master.cc	/^    ACTIVE   = 1,$/;"	e	enum:piccolo::TaskState::Status	file:
+COUNT_TASKS	master.cc	156;"	d	file:
+COUNT_TASKS	master.cc	179;"	d	file:
+FINISHED	master.cc	/^    FINISHED  = 2$/;"	e	enum:piccolo::TaskState::Status	file:
+HandlePutRequest	master.h	/^  void HandlePutRequest() { return; }$/;"	f	class:piccolo::Master
+IdCompare	master.cc	/^  static bool IdCompare(TaskState *a, TaskState *b) {$/;"	f	struct:piccolo::TaskState
+Init	master.h	/^   void Init(const string& kernel,$/;"	f	struct:piccolo::RunDescriptor
+MASTER_H_	master.h	2;"	d
+Master	master.cc	/^Master::Master(const ConfigData &conf) :$/;"	f	class:piccolo::Master
+Master	master.h	/^class Master : public TableHelper {$/;"	c	namespace:piccolo
+MethodStatsMap	master.h	/^  typedef std::map<string, MethodStats> MethodStatsMap;$/;"	t	class:piccolo::Master
+PENDING	master.cc	/^    PENDING  = 0,$/;"	e	enum:piccolo::TaskState::Status	file:
+PendingCompare	master.cc	/^  static bool PendingCompare(WorkerState *a, WorkerState* b) {$/;"	f	struct:piccolo::WorkerState
+RunDescriptor	master.h	/^   RunDescriptor() {$/;"	f	struct:piccolo::RunDescriptor
+RunDescriptor	master.h	/^   RunDescriptor(const string& kernel,$/;"	f	struct:piccolo::RunDescriptor
+RunDescriptor	master.h	/^struct RunDescriptor {$/;"	s	namespace:piccolo
+ShardSet	master.cc	/^typedef std::set<Taskid> ShardSet;$/;"	t	namespace:piccolo	file:
+Status	master.cc	/^  enum Status {$/;"	g	struct:piccolo::TaskState	file:
+TaskMap	master.cc	/^typedef map<Taskid, TaskState*> TaskMap;$/;"	t	namespace:piccolo	file:
+TaskState	master.cc	/^  TaskState(Taskid id, int64_t size)$/;"	f	struct:piccolo::TaskState
+TaskState	master.cc	/^struct TaskState : private boost::noncopyable {$/;"	s	namespace:piccolo	file:
+Taskid	master.cc	/^  Taskid(int t, int s) : table(t), shard(s) {}$/;"	f	struct:piccolo::Taskid
+Taskid	master.cc	/^struct Taskid {$/;"	s	namespace:piccolo	file:
+TestTaskSort	master.cc	/^static void TestTaskSort() {$/;"	f	namespace:piccolo
+WeightCompare	master.cc	/^  static bool WeightCompare(TaskState *a, TaskState *b) {$/;"	f	struct:piccolo::TaskState
+WorkerState	master.cc	/^  WorkerState(int w_id) : id(w_id) {$/;"	f	struct:piccolo::WorkerState
+WorkerState	master.cc	/^struct WorkerState : private boost::noncopyable {$/;"	s	namespace:piccolo	file:
+alive	master.cc	/^  bool alive() const {$/;"	f	struct:piccolo::WorkerState
+assign_shard	master.cc	/^  void assign_shard(int shard, bool should_service) {$/;"	f	struct:piccolo::WorkerState
+assign_tables	master.cc	/^void Master::assign_tables() {$/;"	f	class:piccolo::Master
+assign_task	master.cc	/^  void assign_task(TaskState *s) {$/;"	f	struct:piccolo::WorkerState
+assign_tasks	master.cc	/^void Master::assign_tasks(const RunDescriptor& r, vector<int> shards) {$/;"	f	class:piccolo::Master
+assign_worker	master.cc	/^WorkerState* Master::assign_worker(int table, int shard) {$/;"	f	class:piccolo::Master
+barrier	master.cc	/^void Master::barrier() {$/;"	f	class:piccolo::Master
+barrier	master.h	/^   bool barrier;$/;"	m	struct:piccolo::RunDescriptor
+barriertasks	master.cc	/^void Master::barriertasks() {$/;"	f	class:piccolo::Master
+checkpoint	master.cc	/^void Master::checkpoint() {$/;"	f	class:piccolo::Master
+checkpoint_epoch_	master.h	/^  int checkpoint_epoch_;$/;"	m	class:piccolo::Master
+checkpoint_interval	master.h	/^   int checkpoint_interval;$/;"	m	struct:piccolo::RunDescriptor
+checkpoint_read_dir	master.cc	/^DECLARE_string(checkpoint_read_dir);$/;"	v
+checkpoint_tables	master.h	/^   std::vector<int> checkpoint_tables;$/;"	m	struct:piccolo::RunDescriptor
+checkpoint_type	master.h	/^   CheckpointType checkpoint_type;$/;"	m	struct:piccolo::RunDescriptor
+checkpoint_write_dir	master.cc	/^DECLARE_string(checkpoint_write_dir);$/;"	v
+checkpointing	master.cc	/^  bool checkpointing;$/;"	m	struct:piccolo::WorkerState	file:
+checkpointing_	master.h	/^  bool checkpointing_;$/;"	m	class:piccolo::Master
+clear_tasks	master.cc	/^  void clear_tasks() {$/;"	f	struct:piccolo::WorkerState
+config_	master.h	/^  ConfigData config_;$/;"	m	class:piccolo::Master
+cp_barrier	master.cc	/^void Master::cp_barrier() {$/;"	f	class:piccolo::Master
+cp_vars_	master.h	/^  MarshalledMap cp_vars_;$/;"	m	class:piccolo::Master
+current_run_	master.h	/^  RunDescriptor current_run_;$/;"	m	class:piccolo::Master
+current_run_start_	master.h	/^  double current_run_start_;$/;"	m	class:piccolo::Master
+dead_workers	master.cc	/^static std::set<int> dead_workers;$/;"	m	namespace:piccolo	file:
+dispatch_work	master.cc	/^int Master::dispatch_work(const RunDescriptor& r) {$/;"	f	class:piccolo::Master
+dispatched_	master.h	/^  size_t dispatched_; \/\/# of dispatched tasks$/;"	m	class:piccolo::Master
+dump_stats	master.cc	/^void Master::dump_stats() {$/;"	f	class:piccolo::Master
+epoch	master.h	/^   int epoch;$/;"	m	struct:piccolo::RunDescriptor
+epoch	master.h	/^  int epoch() const { return kernel_epoch_; }$/;"	f	class:piccolo::Master
+finish_checkpoint	master.cc	/^void Master::finish_checkpoint() {$/;"	f	class:piccolo::Master
+finish_checkpoint_writefile	master.cc	/^void Master::finish_checkpoint_writefile(int epoch) {$/;"	f	class:piccolo::Master
+finish_worker_checkpoint	master.cc	/^void Master::finish_worker_checkpoint(int worker_id, const RunDescriptor& r, bool deltaOnly) {$/;"	f	class:piccolo::Master
+finished_	master.h	/^  size_t finished_; \/\/# of finished tasks$/;"	m	class:piccolo::Master
+get_cp_var	master.h	/^  T& get_cp_var(const string& key, T defval=T()) {$/;"	f	class:piccolo::Master
+get_next	master.cc	/^  bool get_next(const RunDescriptor& r, KernelRequest* msg) {$/;"	f	struct:piccolo::WorkerState
+id	master.cc	/^  Taskid id;$/;"	m	struct:piccolo::TaskState	file:
+id	master.cc	/^  int id;$/;"	m	struct:piccolo::WorkerState	file:
+id	master.h	/^  int id() const { return -1; }$/;"	f	class:piccolo::Master
+idle_time	master.cc	/^  double idle_time() {$/;"	f	struct:piccolo::WorkerState
+is_assigned	master.cc	/^  bool is_assigned(Taskid id) {$/;"	f	struct:piccolo::WorkerState
+kernel	master.h	/^   string kernel;$/;"	m	struct:piccolo::RunDescriptor
+kernel_epoch_	master.h	/^  int kernel_epoch_;$/;"	m	class:piccolo::Master
+last_checkpoint_	master.h	/^  double last_checkpoint_;$/;"	m	class:piccolo::Master
+last_ping_time	master.cc	/^  double last_ping_time;$/;"	m	struct:piccolo::WorkerState	file:
+last_task_start	master.cc	/^  double last_task_start;$/;"	m	struct:piccolo::WorkerState	file:
+method	master.h	/^   string method;$/;"	m	struct:piccolo::RunDescriptor
+method_stats_	master.h	/^  MethodStatsMap method_stats_;$/;"	m	class:piccolo::Master
+network_	master.h	/^  rpc::NetworkThread* network_;$/;"	m	class:piccolo::Master
+num_assigned	master.cc	/^  int num_assigned() const { return work.size(); }$/;"	f	struct:piccolo::WorkerState
+operator <	master.cc	/^  bool operator<(const Taskid& b) const {$/;"	f	struct:piccolo::Taskid
+params	master.h	/^   MarshalledMap params;$/;"	m	struct:piccolo::RunDescriptor
+peer_for_shard	master.h	/^  int peer_for_shard(int table, int shard) const {$/;"	f	class:piccolo::Master
+piccolo	master.cc	/^namespace piccolo {$/;"	n	file:
+piccolo	master.h	/^namespace piccolo {$/;"	n
+ping	master.cc	/^  void ping() {$/;"	f	struct:piccolo::WorkerState
+prev_ccp_full_	master.h	/^  double prev_ccp_full_;$/;"	m	class:piccolo::Master
+reap_one_task	master.cc	/^int Master::reap_one_task() {$/;"	f	class:piccolo::Master
+remove_task	master.cc	/^  void remove_task(TaskState* s) {$/;"	f	struct:piccolo::WorkerState
+restore	master.cc	/^bool Master::restore() {$/;"	f	class:piccolo::Master
+run	master.cc	/^void Master::run(RunDescriptor r) {$/;"	f	class:piccolo::Master
+run_all	master.cc	/^void Master::run_all(RunDescriptor r) {$/;"	f	class:piccolo::Master
+run_all	master.h	/^  void run_all(const string& kernel, const string& method, GlobalTable* locality) {$/;"	f	class:piccolo::Master
+run_one	master.cc	/^void Master::run_one(RunDescriptor r) {$/;"	f	class:piccolo::Master
+run_one	master.h	/^  void run_one(const string& kernel, const string& method, GlobalTable* locality) {$/;"	f	class:piccolo::Master
+run_range	master.cc	/^void Master::run_range(RunDescriptor r, vector<int> shards) {$/;"	f	class:piccolo::Master
+run_range	master.h	/^  void run_range(const string& kernel, const string& method,$/;"	f	class:piccolo::Master
+runtime_	master.h	/^  Timer runtime_;$/;"	m	class:piccolo::Master
+send_table_assignments	master.cc	/^void Master::send_table_assignments() {$/;"	f	class:piccolo::Master
+serves	master.cc	/^  bool serves(Taskid id) const {$/;"	f	struct:piccolo::WorkerState
+set_finished	master.cc	/^  void set_finished(const Taskid& id) {$/;"	f	struct:piccolo::WorkerState
+shard	master.cc	/^  int shard;$/;"	m	struct:piccolo::Taskid	file:
+shards	master.cc	/^  ShardSet shards;$/;"	m	struct:piccolo::WorkerState	file:
+shards	master.h	/^   std::vector<int> shards;$/;"	m	struct:piccolo::RunDescriptor
+shards_assigned_	master.h	/^  bool shards_assigned_;$/;"	m	class:piccolo::Master
+size	master.cc	/^  int size;$/;"	m	struct:piccolo::TaskState	file:
+sleep_time	master.cc	/^DECLARE_double(sleep_time);$/;"	v
+start_checkpoint	master.cc	/^void Master::start_checkpoint() {$/;"	f	class:piccolo::Master
+start_deltacheckpoint_	master.h	/^  double start_deltacheckpoint_;$/;"	m	class:piccolo::Master
+start_worker_checkpoint	master.cc	/^void Master::start_worker_checkpoint(int worker_id, const RunDescriptor &r) {$/;"	f	class:piccolo::Master
+status	master.cc	/^  int status;$/;"	m	struct:piccolo::TaskState	file:
+status	master.cc	/^  int status;$/;"	m	struct:piccolo::WorkerState	file:
+steal_work	master.cc	/^bool Master::steal_work(const RunDescriptor& r, int idle_worker,$/;"	f	class:piccolo::Master
+stolen	master.cc	/^  bool stolen;$/;"	m	struct:piccolo::TaskState	file:
+table	master.cc	/^  int table;$/;"	m	struct:piccolo::Taskid	file:
+table	master.h	/^   GlobalTable *table;$/;"	m	struct:piccolo::RunDescriptor
+tables_	master.h	/^  TableRegistry::Map& tables_;$/;"	m	class:piccolo::Master
+total_runtime	master.cc	/^  double total_runtime;$/;"	m	struct:piccolo::WorkerState	file:
+total_size	master.cc	/^  int64_t total_size() const {$/;"	f	struct:piccolo::WorkerState
+work	master.cc	/^  TaskMap work;$/;"	m	struct:piccolo::WorkerState	file:
+worker_for_shard	master.cc	/^WorkerState* Master::worker_for_shard(int table, int shard) {$/;"	f	class:piccolo::Master
+workers_	master.h	/^  std::vector<WorkerState*> workers_;$/;"	m	class:piccolo::Master
+~Master	master.cc	/^Master::~Master() {$/;"	f	class:piccolo::Master

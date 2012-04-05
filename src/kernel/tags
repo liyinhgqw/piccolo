@@ -1,0 +1,527 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ACCUMULATOR	table.h	/^    ACCUMULATOR, TRIGGER, HYBRID$/;"	e	enum:piccolo::AccumulatorBase::Type
+ACCUMULATOR_H	table.h	2;"	d
+Accumulate	table.h	/^    void Accumulate(V* a, const V& b) {$/;"	f	struct:piccolo::Accumulators::Max
+Accumulate	table.h	/^    void Accumulate(V* a, const V& b) {$/;"	f	struct:piccolo::Accumulators::Min
+Accumulate	table.h	/^    void Accumulate(V* a, const V& b) {$/;"	f	struct:piccolo::Accumulators::Replace
+Accumulate	table.h	/^    void Accumulate(V* a, const V& b) {$/;"	f	struct:piccolo::Accumulators::Sum
+Accumulator	table.h	/^struct Accumulator: public AccumulatorBase {$/;"	s	namespace:piccolo
+AccumulatorBase	table.h	/^struct AccumulatorBase {$/;"	s	namespace:piccolo
+Accumulators	table.h	/^struct Accumulators {$/;"	s	namespace:piccolo
+ApplyUpdates	global-table.h	/^  void ApplyUpdates(const piccolo::TableData& req) {$/;"	f	class:piccolo::TypedGlobalTable
+BITMAP_DENSE	local-table.cc	/^  BITMAP_DENSE, BITMAP_SPARSE$/;"	e	enum:piccolo::BitMapPackMode	file:
+BITMAP_SPARSE	local-table.cc	/^  BITMAP_DENSE, BITMAP_SPARSE$/;"	e	enum:piccolo::BitMapPackMode	file:
+BitMapPackMode	local-table.cc	/^enum BitMapPackMode {$/;"	g	namespace:piccolo	file:
+BlockInfo	dense-table.h	/^struct BlockInfo: BlockInfoBase {$/;"	s	namespace:piccolo
+BlockInfoBase	table.h	/^struct BlockInfoBase {$/;"	s	namespace:piccolo
+Bucket	dense-table.h	/^    Bucket() :$/;"	f	struct:piccolo::DenseTable::Bucket
+Bucket	dense-table.h	/^    Bucket(int count) :$/;"	f	struct:piccolo::DenseTable::Bucket
+Bucket	dense-table.h	/^  struct Bucket {$/;"	s	class:piccolo::DenseTable
+Bucket	sparse-table.h	/^  struct Bucket {$/;"	s	class:piccolo::SparseTable
+BucketMap	dense-table.h	/^  typedef typename std::tr1::unordered_map<K, Bucket> BucketMap;$/;"	t	class:piccolo::DenseTable
+CacheEntry	global-table.h	/^  struct CacheEntry {$/;"	s	class:piccolo::GlobalTableBase
+Checkpointable	table.h	/^class Checkpointable {$/;"	c	namespace:piccolo
+CreateRecordIterator	disk-table.cc	/^TypedTableIterator<uint64_t, Message>* CreateRecordIterator(FilePartition p, Message *msg) {$/;"	f	namespace:piccolo
+CreateRecordTable	table-registry.h	/^static RecordTable<T>* CreateRecordTable(int id, StringPiece file_pattern, bool split_large_files=true, int num_shards=-1) {$/;"	f	namespace:piccolo
+CreateStatsTable	table-registry.h	/^static TypedGlobalTable<string, string>* CreateStatsTable() {$/;"	f	namespace:piccolo
+CreateTable	table-registry.h	/^static TypedGlobalTable<K, V>* CreateTable(const TableDescriptor *info,$/;"	f	namespace:piccolo
+CreateTable	table-registry.h	/^static TypedGlobalTable<K, V>* CreateTable(int id, int shards,$/;"	f	namespace:piccolo
+CreateTextTable	table-registry.h	/^static TextTable* CreateTextTable(int id, StringPiece file_pattern, bool split_large_files=true) {$/;"	f	namespace:piccolo
+DENSE_MAP_H_	dense-table.h	2;"	d
+DISKTABLE_H_	disk-table.h	2;"	d
+DSMKernel	kernel.h	/^class DSMKernel {$/;"	c	namespace:piccolo
+DTInt	test-tables.cc	/^typedef DenseTable<int, int> DTInt;$/;"	t	namespace:__anon1	file:
+DecodeIterator	table-inl.h	/^  DecodeIterator() {$/;"	f	struct:piccolo::DecodeIterator
+DecodeIterator	table-inl.h	/^struct DecodeIterator: public DecodeIteratorBase,$/;"	s	namespace:piccolo
+DecodeIteratorBase	table.h	/^struct DecodeIteratorBase {$/;"	s	namespace:piccolo
+DecodeUpdates	dense-table.h	/^  void DecodeUpdates(TableCoder *in, DecodeIteratorBase *itbase) {$/;"	f	class:piccolo::DenseTable
+DecodeUpdates	sparse-table.h	/^void SparseTable<K, V>::DecodeUpdates(TableCoder *in, DecodeIteratorBase *itbase) {$/;"	f	class:piccolo::SparseTable
+DenseTable	dense-table.h	/^  DenseTable(int size = 1) :$/;"	f	class:piccolo::DenseTable
+DenseTable	dense-table.h	/^class DenseTable:$/;"	c	namespace:piccolo
+Deserialize	dense-table.h	/^  void Deserialize(TableCoder* in) {$/;"	f	class:piccolo::DenseTable
+Deserialize	sparse-table.h	/^void SparseTable<K, V>::Deserialize(TableCoder *in, bool tryOptimize) {$/;"	f	class:piccolo::SparseTable
+DiskTable	disk-table.h	/^DiskTable<K, V>::DiskTable(StringPiece file_pattern, uint64_t split_files_at) {$/;"	f	class:piccolo::DiskTable
+DiskTable	disk-table.h	/^class DiskTable: public GlobalTableBase {$/;"	c	namespace:piccolo
+END_TEST_PERF	test-tables.cc	17;"	d	file:
+FETCH_NUM	table.h	4;"	d
+Factory	dense-table.h	/^  struct Factory: public TableFactory {$/;"	s	class:piccolo::DenseTable
+Factory	sparse-table.h	/^  struct Factory : public TableFactory {$/;"	s	class:piccolo::SparseTable
+FilePartition	disk-table.h	/^struct FilePartition {$/;"	s	namespace:piccolo
+Fire	table.h	/^    void Fire(const K* key, V* value, const V& updateval, bool* doUpdate,$/;"	f	struct:piccolo::Triggers::NullTrigger
+Fire	table.h	/^    void Fire(const K* key, V* value, const V& updateval, bool* doUpdate,$/;"	f	struct:piccolo::Triggers::ReadOnlyTrigger
+FromMessage	kernel.h	/^  void FromMessage(const Args& p) {$/;"	f	class:piccolo::MarshalledMap
+FromString	kernel.h	/^    void FromString(const string& s) {$/;"	f	struct:piccolo::MarshalledMap::MarshalledValueT
+GLOBALTABLE_H_	global-table.h	2;"	d
+Get	kernel.cc	/^KernelRegistry* KernelRegistry::Get() {$/;"	f	class:piccolo::KernelRegistry
+Get	table-registry.cc	/^TableRegistry* TableRegistry::Get() {$/;"	f	class:piccolo::TableRegistry
+GetTable	test-tables.cc	/^static T* GetTable() {$/;"	f	namespace:__anon1
+GlobalTable	global-table.h	/^class GlobalTable: virtual public TableBase {$/;"	c	namespace:piccolo
+GlobalTableBase	global-table.h	/^class GlobalTableBase: virtual public GlobalTable {$/;"	c	namespace:piccolo
+HYBRID	table.h	/^    ACCUMULATOR, TRIGGER, HYBRID$/;"	e	enum:piccolo::AccumulatorBase::Type
+HandlePutRequests	global-table.cc	/^void MutableGlobalTableBase::HandlePutRequests() {$/;"	f	class:piccolo::MutableGlobalTableBase
+HybridTrigger	table.h	/^struct HybridTrigger: public AccumulatorBase {$/;"	s	namespace:piccolo
+Init	dense-table.h	/^  void Init(const TableDescriptor * td) {$/;"	f	class:piccolo::DenseTable
+Init	disk-table.h	/^void DiskTable<K, V>::Init(const TableDescriptor *tinfo) {$/;"	f	class:piccolo::DiskTable
+Init	global-table.cc	/^void GlobalTableBase::Init(const TableDescriptor *info) {$/;"	f	class:piccolo::GlobalTableBase
+Init	global-table.h	/^  virtual void Init(const TableDescriptor *tinfo, int retrigt_count) {$/;"	f	class:piccolo::TypedGlobalTable
+Init	sparse-table.h	/^  void Init(const TableDescriptor * td) {$/;"	f	class:piccolo::SparseTable
+Init	table-inl.h	/^  virtual void Init(const TableDescriptor * info) {$/;"	f	class:piccolo::TableBase
+InitKernel	kernel.h	/^  virtual void InitKernel() {}$/;"	f	class:piccolo::DSMKernel
+IntBlockInfo	dense-table.h	/^struct IntBlockInfo: public BlockInfo<int> {$/;"	s	namespace:piccolo
+Iterator	dense-table.h	/^    Iterator(DenseTable<K, V> &parent) :$/;"	f	struct:piccolo::DenseTable::Iterator
+Iterator	dense-table.h	/^  struct Iterator: public TypedTableIterator<K, V> {$/;"	s	class:piccolo::DenseTable
+Iterator	disk-table.h	/^  typedef TypedTableIterator<K, V> Iterator;$/;"	t	class:piccolo::DiskTable
+Iterator	disk-table.h	/^  typedef TypedTableIterator<uint64_t, MessageClass> Iterator;$/;"	t	class:piccolo::RecordTable
+Iterator	disk-table.h	/^  typedef TypedTableIterator<uint64_t, string> Iterator;$/;"	t	class:piccolo::TextTable
+Iterator	global-table.h	/^  typedef TypedTableIterator<K, V> Iterator;$/;"	t	class:piccolo::TypedGlobalTable
+Iterator	sparse-table.h	/^    Iterator(SparseTable<K, V>& parent) : pos(-1), parent_(parent) {$/;"	f	struct:piccolo::SparseTable::Iterator
+Iterator	sparse-table.h	/^  struct Iterator : public TypedTableIterator<K, V> {$/;"	s	class:piccolo::SparseTable
+Iterator	table-inl.h	/^  typedef TableIterator Iterator;$/;"	t	class:piccolo::TableBase
+KERNELREGISTRY_H_	kernel.h	2;"	d
+KERNEL_H_	table-registry.h	2;"	d
+KVPair	global-table.h	/^  typedef std::pair<K, V> KVPair;$/;"	t	class:piccolo::TypedGlobalTable
+KernelFinalize	global-table.h	/^unsigned int TypedGlobalTable<K, V>::KernelFinalize() {$/;"	f	class:piccolo::TypedGlobalTable
+KernelInfo	kernel.h	/^  KernelInfo(const char* name) : name_(name) {}$/;"	f	struct:piccolo::KernelInfo
+KernelInfo	kernel.h	/^struct KernelInfo {$/;"	s	namespace:piccolo
+KernelInfoT	kernel.h	/^  KernelInfoT(const char* name) : KernelInfo(name) {}$/;"	f	struct:piccolo::KernelInfoT
+KernelInfoT	kernel.h	/^struct KernelInfoT : public KernelInfo {$/;"	s	namespace:piccolo
+KernelRegistrationHelper	kernel.h	/^  KernelRegistrationHelper(const char* name) {$/;"	f	struct:piccolo::KernelRegistrationHelper
+KernelRegistrationHelper	kernel.h	/^struct KernelRegistrationHelper {$/;"	s	namespace:piccolo
+KernelRegistry	kernel.h	/^  KernelRegistry() {}$/;"	f	class:piccolo::KernelRegistry
+KernelRegistry	kernel.h	/^class KernelRegistry {$/;"	c	namespace:piccolo
+LOCALTABLE_H_	local-table.h	2;"	d
+LocalTable	local-table.h	/^  LocalTable() : delta_file_(NULL) {}$/;"	f	class:piccolo::LocalTable
+LocalTable	local-table.h	/^class LocalTable :$/;"	c	namespace:piccolo
+LocalTableCoder	local-table.cc	/^LocalTableCoder::LocalTableCoder(const string& f, const string &mode, int64_t *capacity) :$/;"	f	class:piccolo::LocalTableCoder
+LocalTableCoder	local-table.cc	/^struct LocalTableCoder : public TableCoder {$/;"	s	namespace:piccolo	file:
+LongFire	table.h	/^    bool LongFire(const K key, bool lastrun) {$/;"	f	struct:piccolo::Triggers::NullTrigger
+LongFire	table.h	/^    bool LongFire(const K key, bool lastrun) {$/;"	f	struct:piccolo::Triggers::ReadOnlyTrigger
+Map	kernel.h	/^  typedef std::map<string, KernelInfo*> Map;$/;"	t	class:piccolo::KernelRegistry
+Map	table-registry.h	/^  typedef std::map<int, GlobalTable*> Map;$/;"	t	class:piccolo::TableRegistry
+MapTestRGB	test-tables.cc	/^struct MapTestRGB {$/;"	s	namespace:__anon1	file:
+MarshalledMap	kernel.h	/^class MarshalledMap {$/;"	c	namespace:piccolo
+MarshalledValue	kernel.h	/^  struct MarshalledValue {$/;"	s	class:piccolo::MarshalledMap
+MarshalledValueT	kernel.h	/^    MarshalledValueT() : v(new T) {}$/;"	f	struct:piccolo::MarshalledMap::MarshalledValueT
+MarshalledValueT	kernel.h	/^  struct MarshalledValueT  : public MarshalledValue {$/;"	s	class:piccolo::MarshalledMap
+Max	table.h	/^  struct Max: public Accumulator<V> {$/;"	s	struct:piccolo::Accumulators
+Method	kernel.h	/^  typedef void (C::*Method)();$/;"	t	struct:piccolo::KernelInfoT
+MethodRegistrationHelper	kernel.h	/^  MethodRegistrationHelper(const char* klass, const char* mname, void (C::*m)()) {$/;"	f	struct:piccolo::MethodRegistrationHelper
+MethodRegistrationHelper	kernel.h	/^struct MethodRegistrationHelper {$/;"	s	namespace:piccolo
+Min	table.h	/^  struct Min: public Accumulator<V> {$/;"	s	struct:piccolo::Accumulators
+Mod	table.h	/^  struct Mod: public Sharder<int> {$/;"	s	struct:piccolo::Sharding
+MutableGlobalTable	global-table.h	/^  MutableGlobalTable() :$/;"	f	class:piccolo::MutableGlobalTable
+MutableGlobalTable	global-table.h	/^class MutableGlobalTable: virtual public GlobalTable {$/;"	c	namespace:piccolo
+MutableGlobalTableBase	global-table.h	/^  MutableGlobalTableBase() :$/;"	f	class:piccolo::MutableGlobalTableBase
+MutableGlobalTableBase	global-table.h	/^class MutableGlobalTableBase: virtual public GlobalTableBase,$/;"	c	namespace:piccolo
+New	dense-table.h	/^    TableBase* New() {$/;"	f	struct:piccolo::DenseTable::Factory
+New	sparse-table.h	/^    TableBase* New() { return new SparseTable<K, V>(); }$/;"	f	struct:piccolo::SparseTable::Factory
+Next	dense-table.h	/^    void Next() {$/;"	f	struct:piccolo::DenseTable::Iterator
+Next	disk-table.cc	/^  void Next() {$/;"	f	struct:piccolo::RecordIterator
+Next	disk-table.cc	/^  void Next() {$/;"	f	struct:piccolo::TextIterator
+Next	global-table.h	/^  void Next() {$/;"	f	class:piccolo::RemoteIterator
+Next	sparse-table.h	/^    void Next() {$/;"	f	struct:piccolo::SparseTable::Iterator
+Next	table-inl.h	/^  void Next() {$/;"	f	struct:piccolo::DecodeIterator
+NullTrigger	table.h	/^  struct NullTrigger: public Trigger<K, V> {$/;"	s	struct:piccolo::Triggers
+PartitionInfo	global-table.h	/^  PartitionInfo() :$/;"	f	struct:piccolo::PartitionInfo
+PartitionInfo	global-table.h	/^struct PartitionInfo {$/;"	s	namespace:piccolo
+ProtoTableCoder	global-table.cc	/^ProtoTableCoder::ProtoTableCoder(const TableData *in) : read_pos_(0), t_(const_cast<TableData*>(in)) {}$/;"	f	class:piccolo::ProtoTableCoder
+ProtoTableCoder	global-table.h	/^struct ProtoTableCoder: public TableCoder {$/;"	s	namespace:piccolo
+REGISTER_KERNEL	kernel.h	218;"	d
+REGISTER_METHOD	kernel.h	221;"	d
+REGISTER_RUNNER	kernel.h	224;"	d
+RETRIGGER_SCAN_INTERVAL	global-table.h	18;"	d
+ReadBitMap	global-table.cc	/^bool ProtoTableCoder::ReadBitMap(boost::dynamic_bitset<uint32_t>*, LocalTable* table) {$/;"	f	class:piccolo::ProtoTableCoder
+ReadBitMap	local-table.cc	/^bool LocalTableCoder::ReadBitMap(boost::dynamic_bitset<uint32_t>* bitset, LocalTable* table) {$/;"	f	class:piccolo::LocalTableCoder
+ReadEntry	global-table.cc	/^bool ProtoTableCoder::ReadEntry(string *k, string *v) {$/;"	f	class:piccolo::ProtoTableCoder
+ReadEntry	local-table.cc	/^bool LocalTableCoder::ReadEntry(string *k, string *v) {$/;"	f	class:piccolo::LocalTableCoder
+ReadOnlyTrigger	table.h	/^  struct ReadOnlyTrigger: public Trigger<K, V> {$/;"	s	struct:piccolo::Triggers
+RecordIterator	disk-table.cc	/^  RecordIterator(const FilePartition& p, Message *msg) : p_(p), r_(p.info.name, "r") {$/;"	f	struct:piccolo::RecordIterator
+RecordIterator	disk-table.cc	/^struct RecordIterator : public TypedTableIterator<uint64_t, Message> {$/;"	s	namespace:piccolo	file:
+RecordTable	disk-table.h	/^  RecordTable(StringPiece filepattern, uint64_t split_files_at = 0) :$/;"	f	class:piccolo::RecordTable
+RecordTable	disk-table.h	/^class RecordTable: public DiskTable<uint64_t, MessageClass> {$/;"	c	namespace:piccolo
+RemoteIterator	global-table.h	/^  RemoteIterator(TypedGlobalTable<K, V> *table, int shard$/;"	f	class:piccolo::RemoteIterator
+RemoteIterator	global-table.h	/^class RemoteIterator: public TypedTableIterator<K, V> {$/;"	c	namespace:piccolo
+Replace	table.h	/^  struct Replace: public Accumulator<V> {$/;"	s	struct:piccolo::Accumulators
+Reset	table-inl.h	/^  void Reset() {$/;"	f	struct:piccolo::TableDescriptor
+Run	kernel.h	/^  void Run(DSMKernel* obj, const string& method_id) {$/;"	f	struct:piccolo::KernelInfoT
+SPARSE_MAP_H_	sparse-table.h	2;"	d
+START_TEST_PERF	test-tables.cc	15;"	d	file:
+STInt	test-tables.cc	/^typedef SparseTable<int, int> STInt;$/;"	t	namespace:__anon1	file:
+SendUpdates	global-table.cc	/^void MutableGlobalTableBase::SendUpdates() {$/;"	f	class:piccolo::MutableGlobalTableBase
+SendUpdates	global-table.cc	/^void MutableGlobalTableBase::SendUpdates(int* count) {$/;"	f	class:piccolo::MutableGlobalTableBase
+Serializable	table.h	/^class Serializable {$/;"	c	namespace:piccolo
+Serialize	dense-table.h	/^  void Serialize(TableCoder* out, bool tryOptimize = false) {$/;"	f	class:piccolo::DenseTable
+Serialize	sparse-table.h	/^void SparseTable<K, V>::Serialize(TableCoder *out, bool tryOptimize) {$/;"	f	class:piccolo::SparseTable
+Sharder	table.h	/^struct Sharder: public SharderBase {$/;"	s	namespace:piccolo
+SharderBase	table.h	/^struct SharderBase {$/;"	s	namespace:piccolo
+Sharding	table.h	/^struct Sharding {$/;"	s	namespace:piccolo
+SparseTable	sparse-table.h	/^SparseTable<K, V>::SparseTable(int size)$/;"	f	class:piccolo::SparseTable
+SparseTable	sparse-table.h	/^class SparseTable :$/;"	c	namespace:piccolo
+String	table.h	/^  struct String: public Sharder<string> {$/;"	s	struct:piccolo::Sharding
+Sum	table.h	/^  struct Sum: public Accumulator<V> {$/;"	s	struct:piccolo::Accumulators
+TABLE_INL_H_	table-inl.h	2;"	d
+TEST_PERF	test-tables.cc	22;"	d	file:
+TRIGGER	table.h	/^    ACCUMULATOR, TRIGGER, HYBRID$/;"	e	enum:piccolo::AccumulatorBase::Type
+Table	table.h	/^struct Table {$/;"	s	namespace:piccolo
+TableBase	table-inl.h	/^class TableBase: public Table {$/;"	c	namespace:piccolo
+TableCoder	table.h	/^struct TableCoder {$/;"	s	namespace:piccolo
+TableDescriptor	table-inl.h	/^  TableDescriptor() {$/;"	f	struct:piccolo::TableDescriptor
+TableDescriptor	table-inl.h	/^  TableDescriptor(int id, int shards) {$/;"	f	struct:piccolo::TableDescriptor
+TableDescriptor	table-inl.h	/^struct TableDescriptor {$/;"	s	namespace:piccolo
+TableFactory	table.h	/^struct TableFactory {$/;"	s	namespace:piccolo
+TableHelper	table.h	/^struct TableHelper {$/;"	s	namespace:piccolo
+TableIterator	table.h	/^struct TableIterator {$/;"	s	namespace:piccolo
+TableRegistry	table-registry.h	/^  TableRegistry() {}$/;"	f	class:piccolo::TableRegistry
+TableRegistry	table-registry.h	/^class TableRegistry : private boost::noncopyable {$/;"	c	namespace:piccolo
+TestIterate	test-tables.cc	/^static void TestIterate() {$/;"	f	namespace:__anon1
+TestMapPerf	test-tables.cc	/^static void TestMapPerf() {$/;"	f	namespace:__anon1
+TestPut	test-tables.cc	/^static void TestPut() {$/;"	f	namespace:__anon1
+TestSerialize	test-tables.cc	/^static void TestSerialize() {$/;"	f	namespace:__anon1
+TestUpdate	test-tables.cc	/^static void TestUpdate() {$/;"	f	namespace:__anon1
+TextIterator	disk-table.cc	/^  TextIterator(const FilePartition& p) : p_(p), f_(p.info.name, "r") {$/;"	f	struct:piccolo::TextIterator
+TextIterator	disk-table.cc	/^struct TextIterator : public TypedTableIterator<uint64_t, string> {$/;"	s	namespace:piccolo	file:
+TextTable	disk-table.h	/^  TextTable(StringPiece filepattern, uint64_t split_files_at = 0) :$/;"	f	class:piccolo::TextTable
+TextTable	disk-table.h	/^class TextTable: public DiskTable<uint64_t, string> {$/;"	c	namespace:piccolo
+ToMessage	kernel.h	/^  Args* ToMessage() const {$/;"	f	class:piccolo::MarshalledMap
+ToString	kernel.h	/^    string ToString() const {$/;"	f	struct:piccolo::MarshalledMap::MarshalledValueT
+Trigger	table.h	/^struct Trigger: public AccumulatorBase {$/;"	s	namespace:piccolo
+TriggerBase	table.h	/^  TriggerBase() {$/;"	f	struct:piccolo::TriggerBase
+TriggerBase	table.h	/^struct TriggerBase {$/;"	s	namespace:piccolo
+TriggerID	table.h	/^typedef int TriggerID;$/;"	t	namespace:piccolo
+Triggers	table.h	/^struct Triggers {$/;"	s	namespace:piccolo
+Type	table.h	/^  enum Type {$/;"	g	struct:piccolo::AccumulatorBase
+TypedGlobalTable	global-table.h	/^class TypedGlobalTable: virtual public GlobalTable,$/;"	c	namespace:piccolo
+TypedTable	table.h	/^class TypedTable: virtual public UntypedTable {$/;"	c	namespace:piccolo
+TypedTableIterator	table.h	/^struct TypedTableIterator: public TableIterator {$/;"	s	namespace:piccolo
+UintMod	table.h	/^  struct UintMod: public Sharder<uint32_t> {$/;"	s	struct:piccolo::Sharding
+UntypedTable	table.h	/^struct UntypedTable {$/;"	s	namespace:piccolo
+UpdateDecoder	dense-table.h	/^  typedef DecodeIterator<K, V> UpdateDecoder;$/;"	t	class:piccolo::DenseTable
+UpdateDecoder	global-table.h	/^  typedef DecodeIterator<K, V> UpdateDecoder;$/;"	t	class:piccolo::TypedGlobalTable
+UpdateDecoder	sparse-table.h	/^  typedef DecodeIterator<K, V> UpdateDecoder;$/;"	t	class:piccolo::SparseTable
+UpdatePartitions	global-table.cc	/^void GlobalTableBase::UpdatePartitions(const ShardInfo& info) {$/;"	f	class:piccolo::GlobalTableBase
+WriteBitMap	global-table.cc	/^void ProtoTableCoder::WriteBitMap(boost::dynamic_bitset<uint32_t>*, int64_t capacity) {$/;"	f	class:piccolo::ProtoTableCoder
+WriteBitMap	local-table.cc	/^void LocalTableCoder::WriteBitMap(boost::dynamic_bitset<uint32_t>* bitset, int64_t capacity) {$/;"	f	class:piccolo::LocalTableCoder
+WriteEntry	global-table.cc	/^void ProtoTableCoder::WriteEntry(StringPiece k, StringPiece v) {$/;"	f	class:piccolo::ProtoTableCoder
+WriteEntry	local-table.cc	/^void LocalTableCoder::WriteEntry(StringPiece k, StringPiece v) {$/;"	f	class:piccolo::LocalTableCoder
+accum	table-inl.h	/^  AccumulatorBase *accum;$/;"	m	struct:piccolo::TableDescriptor
+append	table-inl.h	/^  void append(K k, V v) {$/;"	f	struct:piccolo::DecodeIterator
+applyingupdates	global-table.h	/^  bool applyingupdates;$/;"	m	class:piccolo::MutableGlobalTable
+args_	kernel.h	/^  MarshalledMap args_;$/;"	m	class:piccolo::DSMKernel
+b	test-tables.cc	/^  uint16_t b;$/;"	m	struct:__anon1::MapTestRGB	file:
+bitset_epoch	dense-table.h	/^  int bitset_epoch() {$/;"	f	class:piccolo::DenseTable
+bitset_epoch	global-table.h	/^int TypedGlobalTable<K,V>::bitset_epoch(void) {$/;"	f	class:piccolo::TypedGlobalTable
+bitset_epoch	sparse-table.h	/^int SparseTable<K, V>::bitset_epoch() {$/;"	f	class:piccolo::SparseTable
+bitset_epoch_	dense-table.h	/^  int bitset_epoch_;$/;"	m	class:piccolo::DenseTable
+bitset_epoch_	sparse-table.h	/^  int bitset_epoch_;$/;"	m	class:piccolo::SparseTable
+bitset_getbitset	dense-table.h	/^  boost::dynamic_bitset<uint32_t>* bitset_getbitset(void) {$/;"	f	class:piccolo::DenseTable
+bitset_getbitset	global-table.h	/^boost::dynamic_bitset<uint32_t>* TypedGlobalTable<K,V>::bitset_getbitset(void) {$/;"	f	class:piccolo::TypedGlobalTable
+bitset_getbitset	sparse-table.h	/^boost::dynamic_bitset<uint32_t>* SparseTable<K, V>::bitset_getbitset(void) {$/;"	f	class:piccolo::SparseTable
+bitset_getkeyforbit	dense-table.h	/^  const K bitset_getkeyforbit(unsigned long int bit_offset) {$/;"	f	class:piccolo::DenseTable
+bitset_getkeyforbit	global-table.h	/^const K TypedGlobalTable<K,V>::bitset_getkeyforbit(unsigned long int bit_offset) {$/;"	f	class:piccolo::TypedGlobalTable
+bitset_getkeyforbit	sparse-table.h	/^const K SparseTable<K, V>::bitset_getkeyforbit(unsigned long int bit_offset) {$/;"	f	class:piccolo::SparseTable
+block_info	dense-table.h	/^  BlockInfo<K>& block_info() {$/;"	f	class:piccolo::DenseTable
+block_info	table-inl.h	/^  BlockInfoBase *block_info;$/;"	m	struct:piccolo::TableDescriptor
+block_pos	dense-table.h	/^  int block_pos(const K& k) {$/;"	f	class:piccolo::DenseTable
+block_size	table-inl.h	/^  int block_size;$/;"	m	struct:piccolo::TableDescriptor
+bucket_for_key	sparse-table.h	/^  int bucket_for_key(const K& k) {$/;"	f	class:piccolo::SparseTable
+bucket_idx	sparse-table.h	/^  uint32_t bucket_idx(K k) {$/;"	f	class:piccolo::SparseTable
+buckets_	sparse-table.h	/^  std::vector<Bucket> buckets_;$/;"	m	class:piccolo::SparseTable
+cache_	global-table.h	/^  std::vector<LocalTable*> cache_;$/;"	m	class:piccolo::GlobalTableBase
+cached_results	global-table.h	/^  std::queue<std::pair<string, string> > cached_results;$/;"	m	class:piccolo::RemoteIterator
+capacity	dense-table.h	/^  int64_t capacity() {$/;"	f	class:piccolo::DenseTable
+capacity	sparse-table.h	/^  int64_t capacity() { return size_; }$/;"	f	class:piccolo::SparseTable
+clear	dense-table.h	/^  void clear() {$/;"	f	class:piccolo::DenseTable
+clear	global-table.cc	/^void MutableGlobalTableBase::clear() {$/;"	f	class:piccolo::MutableGlobalTableBase
+clear	sparse-table.h	/^  void clear() {$/;"	f	class:piccolo::SparseTable
+clear	table-inl.h	/^  void clear() {$/;"	f	struct:piccolo::DecodeIterator
+clearUpdateQueue	global-table.h	/^int TypedGlobalTable<K, V>::clearUpdateQueue(void) {$/;"	f	class:piccolo::TypedGlobalTable
+clearingUpdateQueue	global-table.h	/^  bool clearingUpdateQueue;$/;"	m	class:piccolo::TypedGlobalTable
+contains	dense-table.h	/^  bool contains(const K& k) {$/;"	f	class:piccolo::DenseTable
+contains	global-table.h	/^bool TypedGlobalTable<K, V>::contains(const K &k) {$/;"	f	class:piccolo::TypedGlobalTable
+contains	kernel.h	/^  bool contains(const string& key) const {$/;"	f	class:piccolo::MarshalledMap
+contains	sparse-table.h	/^bool SparseTable<K, V>::contains(const K& k) {$/;"	f	class:piccolo::SparseTable
+contains_str	table.h	/^  virtual bool contains_str(const StringPiece& s) {$/;"	f	class:piccolo::TypedTable
+cp_	kernel.h	/^  MarshalledMap cp_;$/;"	m	class:piccolo::DSMKernel
+create	kernel.h	/^  DSMKernel* create() { return new C; }$/;"	f	struct:piccolo::KernelInfoT
+create_local	global-table.h	/^LocalTable* TypedGlobalTable<K, V>::create_local(int shard) {$/;"	f	class:piccolo::TypedGlobalTable
+current_shard	kernel.h	/^  int current_shard() const { return shard_; }$/;"	f	class:piccolo::DSMKernel
+current_table	kernel.h	/^  int current_table() const { return table_id_; }$/;"	f	class:piccolo::DSMKernel
+data_	disk-table.cc	/^  Message *data_;$/;"	m	struct:piccolo::RecordIterator	file:
+decode_queue_	table-inl.h	/^  std::vector<kvpair> decode_queue_;$/;"	m	struct:piccolo::DecodeIterator
+default_shard_size	table-inl.h	/^  int default_shard_size;$/;"	m	struct:piccolo::TableDescriptor
+delta_file_	local-table.h	/^  LocalTableCoder *delta_file_;$/;"	m	class:piccolo::LocalTable
+dirty	dense-table.h	/^    bool dirty;$/;"	m	struct:piccolo::DenseTable::Bucket
+dirty	global-table.h	/^  bool dirty;$/;"	m	struct:piccolo::PartitionInfo
+done	dense-table.h	/^    bool done() {$/;"	f	struct:piccolo::DenseTable::Iterator
+done	disk-table.cc	/^  bool done() { return done_ || f_.eof() || f_.tell() >= p_.end_pos; }$/;"	f	struct:piccolo::TextIterator
+done	disk-table.cc	/^  bool done() {$/;"	f	struct:piccolo::RecordIterator
+done	global-table.h	/^  bool done() {$/;"	f	class:piccolo::RemoteIterator
+done	sparse-table.h	/^    bool done() {$/;"	f	struct:piccolo::SparseTable::Iterator
+done	table-inl.h	/^  bool done() {$/;"	f	struct:piccolo::DecodeIterator
+done_	disk-table.cc	/^  bool done_;$/;"	m	struct:piccolo::RecordIterator	file:
+done_	disk-table.cc	/^  bool done_;$/;"	m	struct:piccolo::TextIterator	file:
+done_	global-table.h	/^  bool done_;$/;"	m	class:piccolo::RemoteIterator
+empty	dense-table.h	/^  bool empty() {$/;"	f	class:piccolo::DenseTable
+empty	local-table.h	/^  bool empty() { return size() == 0; }$/;"	f	class:piccolo::LocalTable
+empty	sparse-table.h	/^  bool empty() { return size() == 0; }$/;"	f	class:piccolo::SparseTable
+enable	table.h	/^  virtual void enable(bool enabled) {$/;"	f	struct:piccolo::TriggerBase
+enable_retrigger	global-table.h	/^void TypedGlobalTable<K, V>::enable_retrigger(K k) {$/;"	f	class:piccolo::TypedGlobalTable
+enabled	table.h	/^  virtual bool enabled() {$/;"	f	struct:piccolo::TriggerBase
+enabled_	table.h	/^  bool enabled_;$/;"	m	struct:piccolo::TriggerBase
+end_pos	disk-table.h	/^  uint64_t end_pos;$/;"	m	struct:piccolo::FilePartition
+enqueue_update	global-table.h	/^void TypedGlobalTable<K, V>::enqueue_update(K k, V v) {$/;"	f	class:piccolo::TypedGlobalTable
+entries	dense-table.h	/^    std::vector<V> entries;$/;"	m	struct:piccolo::DenseTable::Bucket
+entries_	sparse-table.h	/^  int64_t entries_;$/;"	m	class:piccolo::SparseTable
+f_	disk-table.cc	/^  LocalFile f_;$/;"	m	struct:piccolo::TextIterator	file:
+f_	local-table.cc	/^  RecordFile *f_;$/;"	m	struct:piccolo::LocalTableCoder	file:
+fetch_num_	global-table.h	/^  unsigned int fetch_num_;$/;"	m	class:piccolo::RemoteIterator
+finish_checkpoint	global-table.cc	/^void MutableGlobalTableBase::finish_checkpoint() {$/;"	f	class:piccolo::MutableGlobalTableBase
+finish_checkpoint	local-table.cc	/^void LocalTable::finish_checkpoint() {$/;"	f	class:piccolo::LocalTable
+g	test-tables.cc	/^  uint16_t g;$/;"	m	struct:__anon1::MapTestRGB	file:
+get	dense-table.h	/^  V get(const K& k) {$/;"	f	class:piccolo::DenseTable
+get	global-table.h	/^V TypedGlobalTable<K, V>::get(const K &k) {$/;"	f	class:piccolo::TypedGlobalTable
+get	kernel.h	/^    void* get() const { return v; }$/;"	f	struct:piccolo::MarshalledMap::MarshalledValueT
+get	kernel.h	/^  T& get(const string& k) const {$/;"	f	class:piccolo::MarshalledMap
+get	sparse-table.h	/^V SparseTable<K, V>::get(const K& k) {$/;"	f	class:piccolo::SparseTable
+get_arg	kernel.h	/^  T& get_arg(const string& key) const {$/;"	f	class:piccolo::DSMKernel
+get_block	dense-table.h	/^  V* get_block(const K& k) {$/;"	f	class:piccolo::DenseTable
+get_cp_var	kernel.h	/^  T& get_cp_var(const string& key, T defval=T()) {$/;"	f	class:piccolo::DSMKernel
+get_iterator	dense-table.h	/^  TableIterator* get_iterator() {$/;"	f	class:piccolo::DenseTable
+get_iterator	disk-table.cc	/^TypedTableIterator<uint64_t, string> *TextTable::get_iterator(int shard,unsigned int fetch_num) {$/;"	f	class:piccolo::TextTable
+get_iterator	disk-table.h	/^  Iterator *get_iterator(int shard, unsigned int fetch_num) {$/;"	f	class:piccolo::RecordTable
+get_iterator	global-table.cc	/^TableIterator* GlobalTableBase::get_iterator(int shard, unsigned int fetch_num) {$/;"	f	class:piccolo::GlobalTableBase
+get_iterator	global-table.h	/^TableIterator* TypedGlobalTable<K, V>::get_iterator(int shard,$/;"	f	class:piccolo::TypedGlobalTable
+get_iterator	sparse-table.h	/^  TableIterator *get_iterator() {$/;"	f	class:piccolo::SparseTable
+get_local	global-table.cc	/^void GlobalTableBase::get_local(const StringPiece &k, string* v) {$/;"	f	class:piccolo::GlobalTableBase
+get_local	global-table.h	/^V TypedGlobalTable<K, V>::get_local(const K& k) {$/;"	f	class:piccolo::TypedGlobalTable
+get_partition	global-table.h	/^  LocalTable* get_partition(int shard) {$/;"	f	class:piccolo::GlobalTableBase
+get_partition_info	global-table.h	/^  PartitionInfo* get_partition_info(int shard) {$/;"	f	class:piccolo::GlobalTableBase
+get_remote	global-table.cc	/^bool GlobalTableBase::get_remote(int shard, const StringPiece& k, string* v) {$/;"	f	class:piccolo::GlobalTableBase
+get_shard	global-table.h	/^int TypedGlobalTable<K, V>::get_shard(const K& k) {$/;"	f	class:piccolo::TypedGlobalTable
+get_str	table.h	/^  virtual string get_str(const StringPiece &s) {$/;"	f	class:piccolo::TypedTable
+get_table	kernel.cc	/^GlobalTable* DSMKernel::get_table(int id) {$/;"	f	class:piccolo::DSMKernel
+get_table	kernel.h	/^  TypedGlobalTable<K, V>* get_table(int id) {$/;"	f	class:piccolo::DSMKernel
+get_typed_iterator	disk-table.h	/^  virtual TypedTableIterator<K, V>* get_typed_iterator(int shard) {$/;"	f	class:piccolo::DiskTable
+get_typed_iterator	global-table.h	/^  virtual TypedTableIterator<K, V>* get_typed_iterator(int shard,$/;"	f	class:piccolo::TypedGlobalTable
+google	disk-table.h	/^namespace google {$/;"	n
+handle_get	global-table.cc	/^void GlobalTableBase::handle_get(const HashGet& get_req, TableData *get_resp) {$/;"	f	class:piccolo::GlobalTableBase
+has_method	kernel.h	/^  bool has_method(const string& name) {$/;"	f	struct:piccolo::KernelInfoT
+hashobj_	sparse-table.h	/^  std::tr1::hash<K> hashobj_;$/;"	m	class:piccolo::SparseTable
+helper	table-inl.h	/^  TableHelper *helper() {$/;"	f	class:piccolo::TableBase
+helper	table-inl.h	/^  TableHelper *helper;$/;"	m	struct:piccolo::TableDescriptor
+helper	table.h	/^  TableHelper *helper;$/;"	m	struct:piccolo::TriggerBase
+helper_id	table-inl.h	/^  int helper_id() {$/;"	f	class:piccolo::TableBase
+id	table-inl.h	/^  int id() const {$/;"	f	class:piccolo::TableBase
+id_	global-table.h	/^  int id_;$/;"	m	class:piccolo::RemoteIterator
+idx_	dense-table.h	/^    int idx_;$/;"	m	struct:piccolo::DenseTable::Iterator
+in_use	sparse-table.h	/^    bool in_use;$/;"	m	struct:piccolo::SparseTable::Bucket
+index_	global-table.h	/^  int index_;$/;"	m	class:piccolo::RemoteIterator
+info	disk-table.h	/^  File::Info info;$/;"	m	struct:piccolo::FilePartition
+info	table-inl.h	/^  const TableDescriptor & info() const {$/;"	f	class:piccolo::TableBase
+info_	table-inl.h	/^  TableDescriptor info_;$/;"	m	class:piccolo::TableBase
+initialize_internal	kernel.cc	/^void DSMKernel::initialize_internal(Worker* w, int table_id, int shard) {$/;"	f	class:piccolo::DSMKernel
+is_local_key	global-table.cc	/^bool GlobalTableBase::is_local_key(const StringPiece &k) {$/;"	f	class:piccolo::GlobalTableBase
+is_local_shard	global-table.cc	/^bool GlobalTableBase::is_local_shard(int shard) {$/;"	f	class:piccolo::GlobalTableBase
+it_	dense-table.h	/^    typename BucketMap::iterator it_;$/;"	m	struct:piccolo::DenseTable::Iterator
+k	sparse-table.h	/^    K k;$/;"	m	struct:piccolo::SparseTable::Bucket
+kLoadFactor	sparse-table.h	/^static const double kLoadFactor = 0.4;$/;"	m	namespace:piccolo
+kStatsTableId	table-registry.h	/^static const int kStatsTableId = 1000000;$/;"	v
+kWriteFlushCount	global-table.h	/^static const int kWriteFlushCount = 1000000;$/;"	m	namespace:piccolo
+k_	dense-table.h	/^    K k_;$/;"	m	struct:piccolo::DenseTable::Iterator
+kernel	kernel.h	/^  KernelInfo* kernel(const string& name) { return m_[name]; }$/;"	f	class:piccolo::KernelRegistry
+kernels	kernel.h	/^  Map& kernels() { return m_; }$/;"	f	class:piccolo::KernelRegistry
+key	dense-table.h	/^    const K& key() {$/;"	f	struct:piccolo::DenseTable::Iterator
+key	disk-table.cc	/^  const uint64_t& key() { return pos_; }$/;"	f	struct:piccolo::RecordIterator
+key	disk-table.cc	/^  const uint64_t& key() { return pos_; }$/;"	f	struct:piccolo::TextIterator
+key	global-table.h	/^  const K& key() {$/;"	f	class:piccolo::RemoteIterator
+key	sparse-table.h	/^    const K& key() { return parent_.buckets_[pos].k; }$/;"	f	struct:piccolo::SparseTable::Iterator
+key	table-inl.h	/^  const K& key() {$/;"	f	struct:piccolo::DecodeIterator
+key_	global-table.h	/^  K key_;$/;"	m	class:piccolo::RemoteIterator
+key_str	disk-table.cc	/^  void key_str(string *out) { kmarshal_.marshal(pos_, out); }$/;"	f	struct:piccolo::RecordIterator
+key_str	disk-table.cc	/^  void key_str(string *out) { return kmarshal_.marshal(pos_, out); }$/;"	f	struct:piccolo::TextIterator
+key_str	global-table.h	/^  void key_str(string *out) {$/;"	f	class:piccolo::RemoteIterator
+key_str	table.h	/^  virtual void key_str(string *out) {$/;"	f	struct:piccolo::TypedTableIterator
+kmarshal	dense-table.h	/^    Marshal<K> *kmarshal() {$/;"	f	struct:piccolo::DenseTable::Iterator
+kmarshal_	disk-table.cc	/^  Marshal<uint64_t> kmarshal_;$/;"	m	struct:piccolo::RecordIterator	file:
+kmarshal_	disk-table.cc	/^  Marshal<uint64_t> kmarshal_;$/;"	m	struct:piccolo::TextIterator	file:
+kvpair	table-inl.h	/^  typedef std::pair<K, V> kvpair;$/;"	t	struct:piccolo::DecodeIterator
+last_block_	dense-table.h	/^  V* last_block_;$/;"	m	class:piccolo::DenseTable
+last_block_start_	dense-table.h	/^  K last_block_start_;$/;"	m	class:piccolo::DenseTable
+last_read_time	global-table.h	/^    double last_read_time;$/;"	m	struct:piccolo::GlobalTableBase::CacheEntry
+line_	disk-table.cc	/^  string line_;$/;"	m	struct:piccolo::TextIterator	file:
+local_swap	global-table.cc	/^void MutableGlobalTableBase::local_swap(GlobalTable *b) {$/;"	f	class:piccolo::MutableGlobalTableBase
+m_	dense-table.h	/^  BucketMap m_;$/;"	m	class:piccolo::DenseTable
+m_	global-table.h	/^  boost::recursive_mutex m_;$/;"	m	class:piccolo::GlobalTableBase
+m_	kernel.h	/^    mutable Marshal<T> m_;$/;"	m	struct:piccolo::MarshalledMap::MarshalledValueT
+m_	kernel.h	/^  Map m_;$/;"	m	class:piccolo::KernelRegistry
+m_retrig_	global-table.h	/^  boost::mutex m_retrig_;$/;"	m	class:piccolo::GlobalTableBase
+m_trig_	global-table.h	/^  boost::recursive_mutex m_trig_;$/;"	m	class:piccolo::GlobalTableBase
+m_uq_	global-table.h	/^  boost::recursive_mutex m_uq_;$/;"	m	class:piccolo::GlobalTableBase
+max_stale_time	table-inl.h	/^  double max_stale_time;$/;"	m	struct:piccolo::TableDescriptor
+methods_	kernel.h	/^  std::map<string, Method> methods_;$/;"	m	struct:piccolo::KernelInfoT
+mutable_info	table-inl.h	/^  TableDescriptor* mutable_info() {$/;"	f	class:piccolo::TableBase
+mutable_table	table-registry.cc	/^MutableGlobalTable* TableRegistry::mutable_table(int id) {$/;"	f	class:piccolo::TableRegistry
+mutex	global-table.h	/^  boost::recursive_mutex& mutex() {$/;"	f	class:piccolo::GlobalTableBase
+name_	kernel.h	/^  string name_;$/;"	m	struct:piccolo::KernelInfo
+num_shards	table-inl.h	/^  int num_shards() const {$/;"	f	class:piccolo::TableBase
+num_shards	table-inl.h	/^  int num_shards;$/;"	m	struct:piccolo::TableDescriptor
+offset	dense-table.h	/^  int offset(const int& k, int block_size) {$/;"	f	struct:piccolo::IntBlockInfo
+operator ()	table.h	/^    int operator()(const int& key, int shards) {$/;"	f	struct:piccolo::Sharding::Mod
+operator ()	table.h	/^    int operator()(const string& k, int shards) {$/;"	f	struct:piccolo::Sharding::String
+operator ()	table.h	/^    int operator()(const uint32_t& key, int shards) {$/;"	f	struct:piccolo::Sharding::UintMod
+optimizer_hack	test-tables.cc	/^int optimizer_hack;$/;"	v
+owner	global-table.h	/^  int owner(int shard) {$/;"	f	class:piccolo::GlobalTableBase
+owner_	global-table.h	/^  TableBase* owner_;$/;"	m	class:piccolo::RemoteIterator
+p_	disk-table.cc	/^  FilePartition p_;$/;"	m	struct:piccolo::RecordIterator	file:
+p_	disk-table.cc	/^  FilePartition p_;$/;"	m	struct:piccolo::TextIterator	file:
+p_	kernel.h	/^  mutable std::map<string, MarshalledValue*> p_;$/;"	m	class:piccolo::MarshalledMap
+parent_	dense-table.h	/^    DenseTable<K, V> &parent_;$/;"	m	struct:piccolo::DenseTable::Iterator
+parent_	sparse-table.h	/^    SparseTable<K, V> &parent_;$/;"	m	struct:piccolo::SparseTable::Iterator
+partinfo_	global-table.h	/^  std::vector<PartitionInfo> partinfo_;$/;"	m	class:piccolo::GlobalTableBase
+partition	global-table.h	/^  TypedTable<K, V>* partition(int idx) {$/;"	f	class:piccolo::TypedGlobalTable
+partition_factory	table-inl.h	/^  TableFactory *partition_factory;$/;"	m	struct:piccolo::TableDescriptor
+partitions_	global-table.h	/^  std::vector<LocalTable*> partitions_;$/;"	m	class:piccolo::GlobalTableBase
+pending_write_bytes	global-table.cc	/^int MutableGlobalTableBase::pending_write_bytes() {$/;"	f	class:piccolo::MutableGlobalTableBase
+pending_writes_	global-table.h	/^  int64_t pending_writes_;$/;"	m	class:piccolo::MutableGlobalTableBase
+piccolo	dense-table.h	/^namespace piccolo {$/;"	n
+piccolo	disk-table.cc	/^namespace piccolo {$/;"	n	file:
+piccolo	disk-table.h	/^namespace piccolo {$/;"	n
+piccolo	global-table.cc	/^namespace piccolo {$/;"	n	file:
+piccolo	global-table.h	/^namespace piccolo {$/;"	n
+piccolo	kernel.cc	/^namespace piccolo {$/;"	n	file:
+piccolo	kernel.h	/^namespace piccolo {$/;"	n
+piccolo	local-table.cc	/^namespace piccolo {$/;"	n	file:
+piccolo	local-table.h	/^namespace piccolo {$/;"	n
+piccolo	sparse-table.h	/^namespace piccolo {$/;"	n
+piccolo	table-inl.h	/^namespace piccolo {$/;"	n
+piccolo	table-registry.cc	/^namespace piccolo {$/;"	n	file:
+piccolo	table-registry.h	/^namespace piccolo {$/;"	n
+piccolo	table.h	/^namespace piccolo {$/;"	n
+pinfo_	disk-table.h	/^  std::vector<FilePartition*> pinfo_;$/;"	m	class:piccolo::DiskTable
+pos	sparse-table.h	/^    int pos;$/;"	m	struct:piccolo::SparseTable::Iterator
+pos_	disk-table.cc	/^  uint64_t pos_;$/;"	m	struct:piccolo::RecordIterator	file:
+pos_	disk-table.cc	/^  uint64_t pos_;$/;"	m	struct:piccolo::TextIterator	file:
+protobuf	disk-table.h	/^namespace protobuf {$/;"	n	namespace:google
+put	dense-table.h	/^  void put(const K& k, const V& v) {$/;"	f	class:piccolo::DenseTable
+put	global-table.h	/^void TypedGlobalTable<K, V>::put(const K &k, const V &v) {$/;"	f	class:piccolo::TypedGlobalTable
+put	kernel.h	/^  void put(const string& k, const T& v) {$/;"	f	class:piccolo::MarshalledMap
+put	sparse-table.h	/^void SparseTable<K, V>::put(const K& k, const V& v) {$/;"	f	class:piccolo::SparseTable
+queue_iter_	table-inl.h	/^  typename std::vector<kvpair>::iterator queue_iter_;$/;"	m	struct:piccolo::DecodeIterator
+r	test-tables.cc	/^  uint16_t r;$/;"	m	struct:__anon1::MapTestRGB	file:
+r_	disk-table.cc	/^  RecordFile r_;$/;"	m	struct:piccolo::RecordIterator	file:
+read_pos_	global-table.h	/^  int read_pos_;$/;"	m	struct:piccolo::ProtoTableCoder
+register_method	kernel.h	/^  void register_method(const char* mname, Method m) { methods_[mname] = m; }$/;"	f	struct:piccolo::KernelInfoT
+remote_cache_	global-table.h	/^  std::tr1::unordered_map<StringPiece, CacheEntry> remote_cache_;$/;"	m	class:piccolo::GlobalTableBase
+remove	dense-table.h	/^  void remove(const K& k) {$/;"	f	class:piccolo::DenseTable
+remove	global-table.h	/^void TypedGlobalTable<K, V>::remove(const K &k) {$/;"	f	class:piccolo::TypedGlobalTable
+remove	sparse-table.h	/^  void remove(const K& k) {$/;"	f	class:piccolo::SparseTable
+request_	global-table.h	/^  IteratorRequest request_;$/;"	m	class:piccolo::RemoteIterator
+resize	dense-table.h	/^  void resize(int64_t s) {$/;"	f	class:piccolo::DenseTable
+resize	global-table.cc	/^void MutableGlobalTableBase::resize(int64_t new_size) {$/;"	f	class:piccolo::MutableGlobalTableBase
+resize	sparse-table.h	/^void SparseTable<K, V>::resize(int64_t size) {$/;"	f	class:piccolo::SparseTable
+response_	global-table.h	/^  IteratorResponse response_;$/;"	m	class:piccolo::RemoteIterator
+restore	global-table.cc	/^void MutableGlobalTableBase::restore(const string& f) {$/;"	f	class:piccolo::MutableGlobalTableBase
+restore	local-table.cc	/^void LocalTable::restore(const string& f) {$/;"	f	class:piccolo::LocalTable
+retrigger_mutex	global-table.h	/^  boost::mutex& retrigger_mutex() {$/;"	f	class:piccolo::GlobalTableBase
+retrigger_start	global-table.h	/^void TypedGlobalTable<K, V>::retrigger_start(void) {$/;"	f	class:piccolo::TypedGlobalTable
+retrigger_stop	global-table.h	/^unsigned int TypedGlobalTable<K, V>::retrigger_stop(void) {$/;"	f	class:piccolo::TypedGlobalTable
+retrigger_terminate_	global-table.h	/^  bool retrigger_terminate_; \/\/ set to instruct retrigger threads to clear tables$/;"	m	class:piccolo::TypedGlobalTable
+retrigger_termthreads_	global-table.h	/^  unsigned int retrigger_termthreads_; \/\/ number of "terminated" threads$/;"	m	class:piccolo::TypedGlobalTable
+retrigger_thread	global-table.h	/^void TypedGlobalTable<K, V>::retrigger_thread(int shard_id) {$/;"	f	class:piccolo::TypedGlobalTable
+retrigger_threadcount_	global-table.h	/^  int retrigger_threadcount_; \/\/ number of long trigger threads for this table$/;"	m	class:piccolo::TypedGlobalTable
+retrigger_threadids_	global-table.h	/^  std::vector<boost::thread::id> retrigger_threadids_; \/\/IDs of retrigger threads, for future use$/;"	m	class:piccolo::TypedGlobalTable
+retrigger_updates_	global-table.h	/^  bool retrigger_updates_; \/\/ used for what triggers do in a flush\/apply loop$/;"	m	class:piccolo::TypedGlobalTable
+rewind	table-inl.h	/^  void rewind() {$/;"	f	struct:piccolo::DecodeIterator
+rt_bitset_m_	table.h	/^  boost::recursive_mutex rt_bitset_m_;$/;"	m	class:piccolo::TypedTable
+rt_bitset_mutex	table.h	/^  boost::recursive_mutex& rt_bitset_mutex() {$/;"	f	class:piccolo::TypedTable
+serialized_	kernel.h	/^  mutable std::map<string, string> serialized_;$/;"	m	class:piccolo::MarshalledMap
+set	kernel.h	/^    void set(const void *nv) {$/;"	f	struct:piccolo::MarshalledMap::MarshalledValueT
+set_args	kernel.cc	/^void DSMKernel::set_args(const MarshalledMap& args) {$/;"	f	class:piccolo::DSMKernel
+set_helper	table-inl.h	/^  void set_helper(TableHelper *w) {$/;"	f	class:piccolo::TableBase
+shard	local-table.h	/^  int shard() { return info_.shard; }$/;"	f	class:piccolo::LocalTable
+shard	table-inl.h	/^  int shard;$/;"	m	struct:piccolo::TableDescriptor
+shard_	global-table.h	/^  int shard_;$/;"	m	class:piccolo::RemoteIterator
+shard_	kernel.h	/^  int shard_;$/;"	m	class:piccolo::DSMKernel
+shard_for_key_str	disk-table.h	/^  int shard_for_key_str(const StringPiece &k) {$/;"	f	class:piccolo::DiskTable
+shard_for_key_str	global-table.h	/^int TypedGlobalTable<K, V>::shard_for_key_str(const StringPiece& k) {$/;"	f	class:piccolo::TypedGlobalTable
+shard_size	disk-table.h	/^int64_t DiskTable<K, V>::shard_size(int shard) {$/;"	f	class:piccolo::DiskTable
+shard_size	global-table.cc	/^int64_t GlobalTableBase::shard_size(int shard) {$/;"	f	class:piccolo::GlobalTableBase
+sharder	table-inl.h	/^  SharderBase *sharder;$/;"	m	struct:piccolo::TableDescriptor
+sinfo	global-table.h	/^  ShardInfo sinfo;$/;"	m	struct:piccolo::PartitionInfo
+size	dense-table.h	/^  int64_t size() {$/;"	f	class:piccolo::DenseTable
+size	sparse-table.h	/^  int64_t size() { return entries_; }$/;"	f	class:piccolo::SparseTable
+size_	sparse-table.h	/^  int64_t size_;$/;"	m	class:piccolo::SparseTable
+start	dense-table.h	/^  int start(const int& k, int block_size) {$/;"	f	struct:piccolo::IntBlockInfo
+start_checkpoint	global-table.cc	/^void MutableGlobalTableBase::start_checkpoint(const string& f, bool deltaOnly) {$/;"	f	class:piccolo::MutableGlobalTableBase
+start_checkpoint	local-table.cc	/^void LocalTable::start_checkpoint(const string& f, bool deltaOnly) {$/;"	f	class:piccolo::LocalTable
+start_key	dense-table.h	/^  K start_key(const K& k) {$/;"	f	class:piccolo::DenseTable
+start_pos	disk-table.h	/^  uint64_t start_pos;$/;"	m	struct:piccolo::FilePartition
+swap	global-table.cc	/^void MutableGlobalTableBase::swap(GlobalTable *b) {$/;"	f	class:piccolo::MutableGlobalTableBase
+swap_accumulator	global-table.h	/^void TypedGlobalTable<K, V>::swap_accumulator(Accumulator<V>* newaccum) {$/;"	f	class:piccolo::TypedGlobalTable
+swap_accumulator	global-table.h	/^void TypedGlobalTable<K, V>::swap_accumulator(HybridTrigger<K, V>* newaccum) {$/;"	f	class:piccolo::TypedGlobalTable
+swap_accumulator	global-table.h	/^void TypedGlobalTable<K, V>::swap_accumulator(Trigger<K, V>* newaccum) {$/;"	f	class:piccolo::TypedGlobalTable
+swap_accumulator	table-inl.h	/^  void swap_accumulator(AccumulatorBase* newaccum) {$/;"	f	struct:piccolo::TableDescriptor
+t_	global-table.h	/^  TableData *t_;$/;"	m	struct:piccolo::ProtoTableCoder
+table	table-registry.cc	/^GlobalTable* TableRegistry::table(int id) {$/;"	f	class:piccolo::TableRegistry
+table	table.h	/^  Table *table;$/;"	m	struct:piccolo::TriggerBase
+table_id	table-inl.h	/^  int table_id;$/;"	m	struct:piccolo::TableDescriptor
+table_id_	kernel.h	/^  int table_id_;$/;"	m	class:piccolo::DSMKernel
+tables	table-registry.cc	/^TableRegistry::Map& TableRegistry::tables() {$/;"	f	class:piccolo::TableRegistry
+tainted	global-table.h	/^  bool tainted(int shard) {$/;"	f	class:piccolo::GlobalTableBase
+tainted	global-table.h	/^  bool tainted;$/;"	m	struct:piccolo::PartitionInfo
+tmap_	table-registry.h	/^  Map tmap_;$/;"	m	class:piccolo::TableRegistry
+trigger_flags_	dense-table.h	/^  boost::dynamic_bitset<uint32_t> trigger_flags_;        \/\/Retrigger flags$/;"	m	class:piccolo::DenseTable
+trigger_flags_	sparse-table.h	/^  boost::dynamic_bitset<uint32_t> trigger_flags_;		\/\/Retrigger flags$/;"	m	class:piccolo::SparseTable
+trigger_mutex	global-table.h	/^  boost::recursive_mutex& trigger_mutex() {$/;"	f	class:piccolo::GlobalTableBase
+triggerid	table.h	/^  TriggerID triggerid;$/;"	m	struct:piccolo::TriggerBase
+type	table.h	/^  Type type() {$/;"	f	struct:piccolo::Accumulator
+type	table.h	/^  Type type() {$/;"	f	struct:piccolo::HybridTrigger
+type	table.h	/^  Type type() {$/;"	f	struct:piccolo::Trigger
+update	dense-table.h	/^  void update(const K& k, const V& v) {$/;"	f	class:piccolo::DenseTable
+update	global-table.h	/^void TypedGlobalTable<K, V>::update(const K &k, const V &v) {$/;"	f	class:piccolo::TypedGlobalTable
+update	sparse-table.h	/^void SparseTable<K, V>::update(const K& k, const V& v) {$/;"	f	class:piccolo::SparseTable
+update_queue	global-table.h	/^  std::deque<KVPair> update_queue;$/;"	m	class:piccolo::TypedGlobalTable
+update_str	table.h	/^  virtual void update_str(const StringPiece& kstr, const StringPiece &vstr) {$/;"	f	class:piccolo::TypedTable
+updatequeue_mutex	global-table.h	/^  boost::recursive_mutex& updatequeue_mutex() {$/;"	f	class:piccolo::GlobalTableBase
+v	kernel.h	/^    T *v;$/;"	m	struct:piccolo::MarshalledMap::MarshalledValueT
+v	sparse-table.h	/^    V v;$/;"	m	struct:piccolo::SparseTable::Bucket
+value	dense-table.h	/^    V& value() {$/;"	f	struct:piccolo::DenseTable::Iterator
+value	disk-table.cc	/^  Message& value() { return *data_; }$/;"	f	struct:piccolo::RecordIterator
+value	disk-table.cc	/^  string& value() { return line_; }$/;"	f	struct:piccolo::TextIterator
+value	global-table.h	/^    string value;$/;"	m	struct:piccolo::GlobalTableBase::CacheEntry
+value	global-table.h	/^  V& value() {$/;"	f	class:piccolo::RemoteIterator
+value	sparse-table.h	/^    V& value() { return parent_.buckets_[pos].v; }$/;"	f	struct:piccolo::SparseTable::Iterator
+value	table-inl.h	/^  V& value() {$/;"	f	struct:piccolo::DecodeIterator
+value_	global-table.h	/^  V value_;$/;"	m	class:piccolo::RemoteIterator
+value_str	disk-table.cc	/^  void value_str(string *out) { vmarshal_.marshal(*data_, out); }$/;"	f	struct:piccolo::RecordIterator
+value_str	disk-table.cc	/^  void value_str(string *out) { vmarshal_.marshal(line_, out); }$/;"	f	struct:piccolo::TextIterator
+value_str	global-table.h	/^  void value_str(string *out) {$/;"	f	class:piccolo::RemoteIterator
+value_str	table.h	/^  virtual void value_str(string *out) {$/;"	f	struct:piccolo::TypedTableIterator
+vmarshal	dense-table.h	/^    Marshal<V> *vmarshal() {$/;"	f	struct:piccolo::DenseTable::Iterator
+vmarshal_	disk-table.cc	/^  Marshal<Message> vmarshal_;$/;"	m	struct:piccolo::RecordIterator	file:
+vmarshal_	disk-table.cc	/^  Marshal<string> vmarshal_;$/;"	m	struct:piccolo::TextIterator	file:
+w_	kernel.h	/^  Worker *w_;$/;"	m	class:piccolo::DSMKernel
+worker_id_	global-table.h	/^  int worker_id_;$/;"	m	class:piccolo::GlobalTableBase
+write_delta	global-table.cc	/^void MutableGlobalTableBase::write_delta(const TableData& d) {$/;"	f	class:piccolo::MutableGlobalTableBase
+write_delta	local-table.cc	/^void LocalTable::write_delta(const TableData& put) {$/;"	f	class:piccolo::LocalTable
+writebufcoder	global-table.h	/^  ProtoTableCoder* writebufcoder(int idx) {$/;"	f	class:piccolo::TypedGlobalTable
+writebufcoders_	global-table.h	/^  std::vector<ProtoTableCoder*> writebufcoders_;$/;"	m	class:piccolo::GlobalTableBase
+writebufs_	global-table.h	/^  std::vector<TableData*> writebufs_;$/;"	m	class:piccolo::GlobalTableBase
+~BlockInfo	dense-table.h	/^  virtual ~BlockInfo() {$/;"	f	struct:piccolo::BlockInfo
+~DenseTable	dense-table.h	/^  ~DenseTable() {$/;"	f	class:piccolo::DenseTable
+~GlobalTable	global-table.h	/^  virtual ~GlobalTable() {$/;"	f	class:piccolo::GlobalTable
+~GlobalTableBase	global-table.cc	/^GlobalTableBase::~GlobalTableBase() {$/;"	f	class:piccolo::GlobalTableBase
+~KernelInfo	kernel.h	/^  virtual ~KernelInfo() {}$/;"	f	struct:piccolo::KernelInfo
+~LocalTable	local-table.h	/^  virtual ~LocalTable() {}$/;"	f	class:piccolo::LocalTable
+~LocalTableCoder	local-table.cc	/^LocalTableCoder::~LocalTableCoder() {$/;"	f	class:piccolo::LocalTableCoder
+~MarshalledValueT	kernel.h	/^    ~MarshalledValueT() { delete v; }$/;"	f	struct:piccolo::MarshalledMap::MarshalledValueT
+~ProtoTableCoder	global-table.cc	/^ProtoTableCoder::~ProtoTableCoder() {}$/;"	f	class:piccolo::ProtoTableCoder
+~RecordIterator	disk-table.cc	/^  virtual ~RecordIterator () {}$/;"	f	struct:piccolo::RecordIterator
+~SparseTable	sparse-table.h	/^  ~SparseTable() {}$/;"	f	class:piccolo::SparseTable
+~TypedTable	table.h	/^  virtual ~TypedTable() {$/;"	f	class:piccolo::TypedTable
+~TypedTableIterator	table.h	/^  virtual ~TypedTableIterator() {$/;"	f	struct:piccolo::TypedTableIterator

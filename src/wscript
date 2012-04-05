@@ -1,0 +1,244 @@
+#! /usr/bin/env python
+# encoding: utf-8
+
+import sys
+sys.path.append('../waftools')
+
+import os
+import ppp_tool
+import proto_tool
+import swig
+from os.path import join
+from waflib import Utils
+from waflib.Tools.ccroot import link_task
+
+top = '.'
+out = os.path.abspath('../build')
+
+PROTO_FILES = [
+  'util/common.proto',
+  'worker/worker.proto',
+  'examples/examples.proto',
+  ]
+
+STANDARD_LIBS = [ 'PROTOBUF', 'BOOST_THREAD', 'LZO', 'UNWIND', 'RT' ]
+
+class piccolo_program(link_task):
+  run_str = ' '.join(['${LINK_CXX}',
+                      '${LINKFLAGS}',
+                      '${CXXLNK_SRC_F}${SRC}',
+                      '${CXXLNK_TGT_F}${TGT[0].abspath()}',
+                      '${RPATH_ST:RPATH}',
+                      '${FRAMEWORKPATH_ST:FRAMEWORKPATH}',
+                      '${FRAMEWORK_ST:FRAMEWORK}',
+                      '${ARCH_ST:ARCH}',
+                      '-Wl,--start-group',
+                      '${STLIB_MARKER}',
+                      '${STLIBPATH_ST:STLIBPATH}',
+                      '${STLIB_ST:PICCOLO_STATIC}',
+                      '${SHLIB_MARKER}',
+                      '${LIBPATH_ST:LIBPATH}',
+                      '${LIB_ST:LIB}',
+                      '-Wl,--end-group',
+                      ])
+
+  vars = ['LINKDEPS']
+  ext_out = ['.bin']
+  inst_to = '${BINDIR}'
+  chmod = Utils.O755
+
+def options(ctx):
+  ctx.load('compiler_cc')
+  ctx.load('compiler_cxx')
+  ctx.load('python')
+
+def configure(ctx):
+  ctx.check_tool('compiler_cc')
+  ctx.check_tool('compiler_cxx')
+  ctx.check_tool('python')
+  ctx.check_python_headers()
+
+  proto_tool.configure(ctx)
+  swig.configure(ctx)
+  ppp_tool.configure(ctx)
+
+  ctx.find_program('distcc', var='DISTCC')
+
+  if ctx.env['DISTCC'] and ctx.env['DISTCC_HOSTS']:
+    ctx.env['CC'] = ['distcc'] + ctx.env['CC']
+    ctx.env['CXX'] = ['distcc'] + ctx.env['CXX']
+
+  ctx.check(header_name='lzo/lzo1x.h', mandatory=False)
+  ctx.check(header_name='libunwind.h', mandatory=True)
+  if ctx.check(header_name='google/profiler.h', define_name='CPUPROF', mandatory=False) and\
+     ctx.check(lib='profiler', mandatory=False):
+    STANDARD_LIBS.append('PROFILER')
+  else:
+    ctx.msg('Google profiler library was not found; profiling will not be '
+            'available.', False)
+             
+
+  ctx.find_program('protoc', mandatory=True)
+  ctx.find_program('mpic++', mandatory=True)
+  ctx.find_program('swig', var='SWIG', mandatory=False)
+
+  ctx.env['CXX'] = 'mpic++'
+
+  ctx.check(lib='boost_thread')
+  ctx.check(lib='protobuf')
+  ctx.check(lib='rt')
+  ctx.check(lib='unwind')
+  ctx.check(lib='tcmalloc', uselib_store='TCMALLOC', mandatory=True)
+
+  if not ctx.check(lib='blas', mandatory=False):
+    ctx.msg('BLAS library was not found; certain examples will not be built', False)
+
+  if not ctx.check(lib='z', mandatory=False):
+    ctx.msg('Zlib library was not found; certain examples will not be built', False)
+
+  # check for either lzo or lzo2 availibility.
+  if not ctx.check(lib='lzo2', uselib_store='LZO', mandatory=False):
+    ctx.check(lib='lzo', uselib_store='LZO', mandatory=False)
+
+  # link all programs with the required MPI libraries
+  ctx.env.append_unique('LIB', os.popen('mpic++ -showme:libs').read().split())
+
+
+  COMPILER_FLAGS = ['-fPIC',
+                    '-Wall',
+                    '-Wno-sign-compare',
+                    '-Wno-unused-function',
+                    '-Wno-unused-result',
+                    '-O3',
+                    '-ggdb2']
+
+  ctx.env.append_unique('CXXFLAGS', COMPILER_FLAGS)
+  ctx.env.append_unique('CFLAGS', COMPILER_FLAGS)
+
+  ctx.env.append_unique('INCLUDES',
+                       [ctx.path.find_dir(top).abspath(),
+                        out,
+                        ctx.path.find_dir('external/google-logging').abspath(),
+                        ctx.path.find_dir('external/google-flags').abspath()])
+
+  ctx.env.append_unique('SWIGFLAGS', ['-python',
+                                     '-ignoremissing',
+                                     '-c++',
+                                     '-w315', ])
+
+def build(bld):
+  bld.env['SRCDIR'] = bld.path.get_src().abspath()
+
+  bld.shlib(target='piccolo_proto', source=PROTO_FILES, features='cxx cxxshlib')
+  bld.add_group()
+
+  def _lib(target, source, dir, use=None):
+    if not use: use = []
+    source = [join(dir, src) for src in source]
+    bld.shlib(target=target,
+              use=use,
+              source=source)
+
+  _lib(target='common',
+       dir='util',
+       source=['common.cc',
+               'file.cc',
+               'stringpiece.cc',
+               'rpc.cc',
+               'static-initializers.cc'])
+
+  _lib(target='kernel',
+       dir='kernel',
+       source=[ 'kernel.cc',
+                'table-registry.cc',
+                'disk-table.cc',
+                'local-table.cc',
+                'global-table.cc',
+                 ])
+
+  _lib(target='worker',
+       dir='worker',
+       use=[ 'kernel', 'common' ],
+       source=[ 'worker.cc' ])
+
+#  _lib(target='_piccolo.so',
+#            source='python_support.swig',
+#            features='pyext cxx',
+#            uses=['worker', 'common', 'kernel', 'master', 'gflags', 'glog'])
+
+  _lib(target='master',
+       dir='master',
+       use=['kernel', 'common'],
+       source=['master.cc'])
+
+  _lib(target='gflags',
+       dir='external/google-flags',
+       source=['gflags.cc',
+               'gflags_reporting.cc',
+               'gflags_nc.cc'])
+
+  _lib(target='glog',
+       dir='external/google-logging',
+       source=[ 'utilities.cc',
+                'vlog_is_on.cc',
+                'demangle.cc',
+                'logging.cc',
+                'symbolize.cc',
+                'signalhandler.cc',
+                'raw_logging.cc' ])
+
+  main_obj = bld.objects(target='example_main.o',
+                         source=['examples/main.cc'])
+
+  def build_example(target, sources, use=None):
+    if not use: use = []
+
+    # add system library dependencies
+    piccolo_lib = [ 'piccolo_proto',
+                    'worker', 'master', 'common', 'kernel',
+                    'gflags', 'glog', 'tcmalloc' ]
+    STANDARD_LIBS.append('tcmalloc')
+    use.append('tcmalloc')
+
+    if 'LIB_PROFILER' in bld.env:
+      STANDARD_LIBS.append('PROFILER')
+      piccolo_lib.append('profiler')
+      use.append('profiler')
+
+    #print " ".join(use + ['example_main.o',] + piccolo_lib + STANDARD_LIBS)
+    bld.program(target=target,
+                source=[join('examples', src) for src in sources],
+                features='cxxprogram cxx',
+                use=use + ['example_main.o',] + piccolo_lib + STANDARD_LIBS,
+                lib=piccolo_lib)
+
+  if 'LIB_BLAS' in bld.env:
+    build_example('matmul', ['matmul.pp', ], use=['BLAS'])
+
+  if 'LIB_Z' in bld.env:
+    _lib(target='webgraph',
+         dir='external/webgraph',
+         source=['webgraph.cc'],
+         use=['Z','tcmalloc'])
+
+    build_example('pagerank', ['pagerank.pp'], use=['webgraph'])
+    build_example('accelpagerank', ['accelpagerank.pp'], use=['webgraph'])
+
+  build_example('k-means', ['k-means.pp', ])
+  build_example('shortest-path', ['shortest-path.pp', ])
+  build_example('shortest-path-trigger', ['shortest-path-trigger.pp', ])
+
+  build_example('test-tables', ['test-tables.cc', ])
+  build_example('test-tables2', ['test-tables2.cc', ])
+  build_example('wordcount', ['wordcount.pp', ])
+  build_example('faceclass', ['facedet/cpp/pgmimage.c',
+                               'facedet/cpp/imagenet.cpp',
+                               'facedet/cpp/backprop.cpp',
+                               'faceclass.cc', ])
+  build_example('nas/isort', ['nas/isort.cc', ])
+  build_example('nas/n-body', ['nas/n-body.cc', ])
+  build_example('bipartmatch', ['bipartmatch.cc'])
+  build_example('bipartmatch-trigger', ['bipartmatch-trigger.cc', ])
+  build_example('conncomp', ['conncomp.pp', ])
+  build_example('conncomp-trigger', ['conncomp-trigger.pp', ])
+

@@ -1,0 +1,71 @@
+Invoking MPI...mpirun  -x LD_LIBRARY_PATH -hostfile conf/mpi-cluster -bycore -nooversubscribe -n 2 build/k-means --num_points=10000 --num_clusters=100 --hostfile=conf/mpi-cluster
+All workers registered; starting up.
+Restore disabled by flag.
+Running run (1); 0/1 ; assigned: 1 done: 0
+Running run (1); 1/1 ; assigned: 1 done: 1
+Kernel 'run' finished in 0.057968
+Kernel 'run' finished in 0.124957
+Kernel 'map' finished in 0.911882
+Kernel 'map' finished in 0.0592792
+Kernel 'map' finished in 0.0799704
+Starting new checkpoint: epoch1
+All workers finished checkpointing.  Flushing epoch 1.
+Kernel 'map' finished in 0.846187
+Kernel 'map' finished in 0.0669187
+Kernel 'map' finished in 0.0803838
+Starting new checkpoint: epoch2
+All workers finished checkpointing.  Flushing epoch 2.
+Kernel 'map' finished in 0.928207
+Kernel 'map' finished in 0.0651437
+Kernel 'map' finished in 0.072182
+Starting new checkpoint: epoch3
+All workers finished checkpointing.  Flushing epoch 3.
+Kernel 'map' finished in 0.849937
+Kernel 'map' finished in 0.0623398
+Kernel 'map' finished in 0.0760657
+Starting new checkpoint: epoch4
+All workers finished checkpointing.  Flushing epoch 4.
+Kernel 'map' finished in 0.860092
+Kernel 'map' finished in 0.0684772
+Kernel 'map' finished in 0.0746377
+Starting new checkpoint: epoch5
+All workers finished checkpointing.  Flushing epoch 5.
+Kernel 'map' finished in 0.859769
+Kernel 'map' finished in 0.0603886
+Kernel 'map' finished in 0.0751104
+Starting new checkpoint: epoch6
+All workers finished checkpointing.  Flushing epoch 6.
+Kernel 'map' finished in 0.843216
+Kernel 'map' finished in 0.0672122
+Kernel 'map' finished in 0.0799937
+Starting new checkpoint: epoch7
+All workers finished checkpointing.  Flushing epoch 7.
+Kernel 'map' finished in 0.822368
+Kernel 'map' finished in 0.0655539
+Kernel 'map' finished in 0.0740735
+Starting new checkpoint: epoch8
+All workers finished checkpointing.  Flushing epoch 8.
+Kernel 'map' finished in 0.876651
+Kernel 'map' finished in 0.0672841
+Kernel 'map' finished in 0.0758965
+Starting new checkpoint: epoch9
+All workers finished checkpointing.  Flushing epoch 9.
+Running map (4); 1/4 ; assigned: 2 done: 1
+Running map (4); 4/4 ; assigned: 4 done: 4
+Kernel 'map' finished in 0.897473
+Kernel 'map' finished in 0.0761064
+Kernel 'map' finished in 0.0779866
+Starting new checkpoint: epoch10
+All workers finished checkpointing.  Flushing epoch 10.
+Total runtime: 10.8774
+Worker execution time:
+
+0: 9.309 
+Kernel stats: 
+P_P_P_srcP_examplesP_kP_meansP_ppMapKernel3:map--> total_time: 8.6957615240009325 shard_time: 8.3828470630041956 calls: 10 shard_calls: 40
+P_P_P_srcP_examplesP_kP_meansP_ppMapKernel4:map--> total_time: 0.65868407699899478 shard_time: 0.36676800200043758 calls: 10 shard_calls: 40
+P_P_P_srcP_examplesP_kP_meansP_ppMapKernel5:map--> total_time: 0.76627641500314425 shard_time: 0.45323154699423185 calls: 10 shard_calls: 40
+___src_examples_k_means_ppRunKernel1:run--> total_time: 0.057965528002164035 shard_time: 0.010814300003303856 calls: 1 shard_calls: 1
+___src_examples_k_means_ppRunKernel2:run--> total_time: 0.12495400100083742 shard_time: 0.095442528004745952 calls: 1 shard_calls: 4
+Shutting down workers.
+Exiting.
