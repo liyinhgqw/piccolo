@@ -48,7 +48,7 @@ static void BuildGraph(int shards, int nodes, int density) {
 class cc_kern : public DSMKernel {
 public:
   void cc_driver() {
-    TypedTableIterator<long long unsigned int, PathNode>* it = nodes->get_typed_iterator(current_shard());
+    TypedTableIterator<long unsigned int, PathNode>* it = nodes->get_typed_iterator(current_shard());
     for(;!it->done(); it->Next()) {
         PathNode n = it->value();
         for (int j = 0; j < n.target_size(); ++j) {
